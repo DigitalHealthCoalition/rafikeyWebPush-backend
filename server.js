@@ -28,6 +28,8 @@ process.on('unhandledRejection', (reason) => {
 
 app.listen(port, ()=>{
     console.log(`Server is running on port ${port}`)
+if(config.NODE_ENV === 'development'){
+    // run only on development mode
     startCronJob()
 })
 
