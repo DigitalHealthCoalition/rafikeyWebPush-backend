@@ -9,7 +9,7 @@ import { fileURLToPath} from 'url'
 
 // Get the backend base URL from config
 // const BASE_URL = config.BACKEND_BASE_URL
-const BASE_URL =  config.BACKEND_APP_API
+const BASE_URL =  process.env.BACKEND_APP_API
 const __filepath =  fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filepath);
 
@@ -36,6 +36,6 @@ const sendNotificationTask = async () =>{
 }
 
 export const startCronJob = ()=>{
-    cron.schedule('* * * * *', sendNotificationTask)
+    cron.schedule('*/5 * * * *', sendNotificationTask)
 }
 
