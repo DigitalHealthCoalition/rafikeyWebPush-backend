@@ -31,6 +31,7 @@ app.listen(port, ()=>{
 if(config.NODE_ENV === 'development'){
     // run only on development mode
     startCronJob()
+}
 })
 
 
